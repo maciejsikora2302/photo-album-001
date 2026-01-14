@@ -24,7 +24,7 @@ const bookContent = [
     },
     {
         type: 'text',
-        content: 'We started the day walking along the river. The city feels distinct immediately—the contrast between the classic architecture and the modern infrastructure is striking.'
+        content: 'First day was for getting lost in the city and finding its hidden gems. But not without visiting the most iconic places, starting from Casco Viejo.'
     },
     {
         type: 'split',
@@ -67,6 +67,7 @@ const bookContent = [
     {
         type: 'photo',
         url: 'images/day1/DSC07825.jpg', // Vertical street shot
+        wide: true,
         align: 'center',
         caption: 'River views'
     },
