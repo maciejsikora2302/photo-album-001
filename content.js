@@ -31,23 +31,23 @@ const bookContent = [
         layout: 'text-left',
         text: 'The distinct red trams and green bike systems add a pop of color to the cloudy morning. The city is preparing for the holidays.',
         photo: {
-            url: 'images/day1/DSC07801.JPG', // The red Christmas structure
+            url: 'images/day1/DSC07801.jpg', // The red Christmas structure
             caption: 'Holiday preparations near the bridge'
         }
     },
     {
         type: 'row',
         photos: [
-            { url: 'images/day1/DSC07812.JPG', caption: 'Bilbaobizi Bikes' },
-            { url: 'images/day1/DSC07818.JPG', caption: 'The Green Tram' },
+            { url: 'images/day1/DSC07812.jpg', caption: 'Bilbaobizi Bikes' },
+            { url: 'images/day1/DSC07818.jpg', caption: 'The Green Tram' },
         ]
     },
     {
         type: 'row',
         wide: true,
         photos: [
-            { url: 'images/day1/DSC07836.JPG', caption: 'The Red Tram' },
-            { url: 'images/day1/DSC07796.JPG', caption: 'The Bus' },
+            { url: 'images/day1/DSC07836.jpg', caption: 'The Red Tram' },
+            { url: 'images/day1/DSC07796.jpg', caption: 'The Bus' },
         ]
     },
 
@@ -60,21 +60,21 @@ const bookContent = [
         type: 'row',
         normalize: 'max',
         photos: [
-            { url: 'images/day1/DSC07827.JPG', caption: 'Narrow streets' },
-            { url: 'images/day1/DSC07842.JPG', caption: 'Vertical layers of the city' },
+            { url: 'images/day1/DSC07827.jpg', caption: 'Narrow streets' },
+            { url: 'images/day1/DSC07842.jpg', caption: 'Vertical layers of the city' },
         ]
     },
     {
         type: 'photo',
-        url: 'images/day1/DSC07825.JPG', // Vertical street shot
+        url: 'images/day1/DSC07825.jpg', // Vertical street shot
         align: 'center',
         caption: 'River views'
     },
     {
         type: 'row',
         photos: [
-            { url: 'images/day1/DSC07876.JPG', caption: 'Street Art' },
-            { url: 'images/day1/DSC07875.JPG', caption: 'Urban textures' }
+            { url: 'images/day1/DSC07876.jpg', caption: 'Street Art' },
+            { url: 'images/day1/DSC07875.jpg', caption: 'Urban textures' }
         ]
     },
 
@@ -84,7 +84,7 @@ const bookContent = [
         layout: 'text-right',
         text: 'Every corner of the city has its own unique character.',
         photo: {
-            url: 'images/day1/DSC07871.JPG', // The Graffiti
+            url: 'images/day1/DSC07871.jpg', // The Graffiti
             caption: 'The Graffiti'
         }
     },
@@ -93,13 +93,13 @@ const bookContent = [
         wide: true,
         normalize: 'min',
         photos: [
-            { url: 'images/day1/DSC07857.JPG', caption: 'Modern lines' },
-            { url: 'images/day1/DSC07858.JPG', caption: 'River bend', wide: true },
+            { url: 'images/day1/DSC07857.jpg', caption: 'Modern lines' },
+            { url: 'images/day1/DSC07858.jpg', caption: 'River bend', wide: true },
         ]
     },
     {
         type: 'photo',
-        url: 'images/day1/DSC07882.JPG', // The Guggenheim
+        url: 'images/day1/DSC07882.jpg', // The Guggenheim
         wide: true,
         align: 'center',
         caption: 'Three photos in one'
@@ -118,12 +118,12 @@ const bookContent = [
     {
         type: 'row',
         photos: [
-            { url: 'images/day1/DSC07895.JPG', caption: 'Blue hour streets' }
+            { url: 'images/day1/DSC07895.jpg', caption: 'Blue hour streets' }
         ]
     },
     {
         type: 'photo',
-        url: 'images/day1/DSC07891.JPG', // The meat display/fridge
+        url: 'images/day1/DSC07891.jpg', // The meat display/fridge
         align: 'center',
         caption: 'Local culinary window shopping'
     },
@@ -137,9 +137,9 @@ const bookContent = [
         type: 'row',
         wide: true,
         photos: [
-            { url: 'images/day1/DSC07918.JPG', caption: 'Blue illumination' },
-            { url: 'images/day1/DSC07916.JPG', caption: 'Full range of colors!' },
-            { url: 'images/day1/DSC07919.JPG', caption: 'Magenta illumination' }
+            { url: 'images/day1/DSC07918.jpg', caption: 'Blue illumination' },
+            { url: 'images/day1/DSC07916.jpg', caption: 'Full range of colors!' },
+            { url: 'images/day1/DSC07919.jpg', caption: 'Magenta illumination' }
         ]
     },
     {
@@ -147,25 +147,25 @@ const bookContent = [
         layout: 'text-left',
         text: 'The architecture around the Iberdrola Tower looks incredibly futuristic at night.',
         photo: {
-            url: 'images/day1/DSC07982.JPG', // The Tower at night
+            url: 'images/day1/DSC07982.jpg', // The Tower at night
             caption: 'Iberdrola Tower'
         }
     },
     {
         type: 'photo',
-        url: 'images/day1/DSC07974.JPG',
+        url: 'images/day1/DSC07974.jpg',
         align: 'center',
         caption: 'Street lights'
     },
     {
         type: 'photo',
-        url: 'images/day1/DSC07988.JPG',
+        url: 'images/day1/DSC07988.jpg',
         align: 'center',
         caption: 'Night vibe'
     },
     {
         type: 'photo',
-        url: 'images/day1/DSC07987.JPG',
+        url: 'images/day1/DSC07987.jpg',
         align: 'center',
         caption: 'Reflections'
     },
