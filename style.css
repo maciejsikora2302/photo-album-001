@@ -1,0 +1,287 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --bg-color: #140e0a;
+    /* Deep dark background */
+    --text-color: #e0e0e0;
+    --accent-color: #a0a0a0;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+    --spacing-unit: 3rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+/* Layout Container */
+#book-container {
+    max-width: 90%;
+    /* Widen the main container to 90% of viewport */
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-unit);
+}
+
+/* Default Content Constraint (keeps original 1000px look) */
+.chapter-wrapper,
+.photo-wrapper,
+.photo-row,
+.split-layout,
+.text-block {
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Wide Mode Override */
+.is-wide {
+    max-width: 100% !important;
+}
+
+/* Typography & Elements */
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chapter-title {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+}
+
+.chapter-title:first-child {
+    margin-top: 0;
+}
+
+.text-block {
+    font-size: 1.15rem;
+    color: #cccccc;
+    text-align: justify;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    /* Text stays narrower for readability even in wide mode container, unless specifically overridden? existing was 700px */
+    /* Note: text-block usually stays narrow for reading comfort. */
+}
+
+/* Photo Wrapper & Layouts */
+.photo-wrapper {
+    /* width: 100%; handled in default constraint above */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Default is centered for single photos if not specified, but we handles this in logic */
+}
+
+/* Specific Alignment */
+.align-left {
+    align-items: flex-start;
+    padding-right: 0;
+    /* Removing fixed padding preference to favor max-width constraints, or keep? */
+    /* Original used padding-right: 20% to visually "left align" in 100% container. 
+       Now container is 1000px centered. 
+       If we want "align left" inside 1000px, flex-start does it. 
+       But original design had it look "smaller" vs full width. 
+       Let's keep simpler logic: align-left just floats it left visually within the block?
+       The previous logic used padding to squeeze it. Let's adapt. 
+    */
+    padding-right: 20%;
+}
+
+.align-right {
+    align-items: flex-end;
+    padding-left: 20%;
+}
+
+.align-center {
+    align-items: center;
+    padding: 0;
+}
+
+/* Photo Styling */
+.photo {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Darker shadow */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+    cursor: pointer;
+    filter: brightness(0.9);
+    /* Slightly dim by default to match dark aesthetic */
+}
+
+/* Hover Effect */
+.photo:hover {
+    transform: scale(1.01);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    filter: brightness(1);
+    z-index: 10;
+}
+
+.caption {
+    margin-top: 0.8rem;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    text-align: center;
+    width: 100%;
+}
+
+/* Row Layout (Stacked Photos) */
+.photo-row {
+    display: flex;
+    gap: 20px;
+    /* width: 100%; handled above */
+    justify-content: center;
+}
+
+.photo-row .photo-wrapper {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    /* Distribute space evenly */
+}
+
+.photo-row .photo-wrapper.is-wide {
+    flex: 3 !important;
+    /* Grow wider than others */
+}
+
+/* Split Layout (Photo + Text) */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.split-layout.text-left .text-block {
+    order: -1;
+    text-align: left;
+}
+
+.split-layout .text-block {
+    margin: 0;
+    text-align: left;
+    /* Keep left aligned in split view usually looks better */
+    max-width: 100%;
+    /* Override the global 700px limit for text inside split layout so it fills grid cell */
+}
+
+/* Scroll Animation Classes */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #book-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .chapter-title {
+        font-size: 2.2rem;
+    }
+
+    .text-block {
+        font-size: 1.05rem;
+    }
+
+    .align-left,
+    .align-right {
+        padding: 0;
+        /* Reset padding on mobile */
+        align-items: center;
+    }
+
+    .photo-row {
+        flex-direction: column;
+    }
+
+    .split-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Table of Contents */
+#toc-container {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    border-radius: 4px;
+}
+
+#toc-title {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-item {
+    margin: 0.8rem 0;
+}
+
+.toc-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.toc-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
